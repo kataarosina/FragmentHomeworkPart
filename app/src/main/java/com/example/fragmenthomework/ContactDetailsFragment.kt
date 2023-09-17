@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
+import coil.load
 import com.example.fragmenthomework.databinding.FragmentContactDetailsBinding
-
 
 
 class ContactDetailsFragment : Fragment() {
@@ -31,11 +31,12 @@ class ContactDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         contact = requireArguments().getParcelable("contact")!!
-        binding.editTextFirstName.text = Editable.Factory.getInstance().newEditable(contact.firstName)
+        val imageUrl = "https://loremflickr.com/320/240/${contact.id}"
+        binding.imageView.load(imageUrl)
+        binding.editTextFirstName.text =
+            Editable.Factory.getInstance().newEditable(contact.firstName)
         binding.editTextLastName.text = Editable.Factory.getInstance().newEditable(contact.lastName)
         binding.editTextNumber.text = Editable.Factory.getInstance().newEditable(contact.number)
-
-        // обработчик нажатия для кнопки сохранения
         binding.saveButton.setOnClickListener {
             contact.firstName = binding.editTextFirstName.text.toString()
             contact.lastName = binding.editTextLastName.text.toString()

@@ -3,7 +3,8 @@ package com.example.fragmenthomework
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Contact(val id:Int, var firstName: String, var lastName: String, var number: String) : Parcelable {
+data class Contact(val id: Int, var firstName: String, var lastName: String, var number: String) :
+    Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt() ?: 0,
         parcel.readString() ?: "",

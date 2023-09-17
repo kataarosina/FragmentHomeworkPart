@@ -4,37 +4,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp" />
+
     <EditText
         android:id="@+id/editTextFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="FirstName" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
+        android:hint="FirstName"
+        android:padding="16dp" />
+
     <EditText
         android:id="@+id/editTextLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="LastName" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
+        android:hint="LastName"
+        android:padding="16dp" />
+
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:hint="Number" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-
+        android:layout_height="wrap_content"
+        android:hint="Number"
+        android:padding="16dp" />
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:padding="16dp"
         android:text="Save" />
 
 </LinearLayout>

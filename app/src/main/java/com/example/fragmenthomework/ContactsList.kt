@@ -4,15 +4,27 @@ object ContactsList {
     val contacts = mutableListOf<Contact>()
 
     init {
-        contacts.addAll(
-            listOf(
-                Contact(1,"John", "Doe", "123-456-7890"),
-                Contact(2,"Jane", "Smith", "987-654-3210"),
-                Contact(3,"Alice", "Johnson", "555-123-4567"),
-                Contact(4,"Bob", "Brown", "111-222-3333"),
-                Contact(5,"Eva", " Williams", "999-888-7777"),
-                Contact(6,"Michael", "Davis", "444-555-6666")
+
+        for (i in 1..100) {
+            val contact = Contact(
+                id = i,
+                firstName = "FirstName$i",
+                lastName = "LastName$i",
+                number = generateRandomPhoneNumber()
             )
-        )
+            contacts.add(contact)
+        }
+    }
+
+    fun generateRandomPhoneNumber(): String {
+        val random = java.util.Random()
+        val stringBuilder = StringBuilder()
+
+        for (i in 1..7) {
+            val digit = random.nextInt(10) // Генерируем случайную цифру от 0 до 9
+            stringBuilder.append(digit)
+        }
+
+        return stringBuilder.toString()
     }
 }
